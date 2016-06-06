@@ -144,7 +144,12 @@ class CI_Cache_memcached extends CI_Driver {
     public function get($id) {
         $data = $this->_memcached->get($id);
 
-        return is_array($data) ? $data[0] : $data;
+        //缓存增加对sae的支持
+        if ('SAE' == SERVER_PLAT) {
+            return $data;
+        }else{
+            return is_array($data) ? $data[0] : $data;
+        }     
     }
 
     // ------------------------------------------------------------------------
