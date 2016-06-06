@@ -44,7 +44,7 @@ $hook['post_controller_constructor'] = function() {
     }else{//p参数传了
                 
         try {
-            $paraRaw = json_decode($CI->my_des->decode($para, MY_DES_KEY));
+            $paraRaw = json_decode(urldecode($CI->my_des->decode($para, MY_DES_KEY)));
             
             if(false === isset($paraRaw->os)
                     || false === array_search($paraRaw->os, $CI->config->item('my_osPara'))){

@@ -14,8 +14,8 @@ define('MY_DES_KEY', 'abcdefgh');
 //api相关配置
 $config['demo'] = array(
   'url' => '', //api地址
-  'deskey' => '' //des加解密key
-  'token' => '' //安全码
+  'deskey' => '', //des加解密key
+  'token' => '', //安全码
   'os' => 'Web'
 );
 //--------------------以下内容正式发布时不需要配置

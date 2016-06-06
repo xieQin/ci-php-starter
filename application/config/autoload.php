@@ -63,8 +63,10 @@ $autoload['packages'] = array();
 //自动加载加解密类
 //自动加载返回类
 //自动加载my_api类
-// $autoload['libraries'] = array('my_curl', 'database', 'my_des', 'my_response', 'my_api');
-$autoload['libraries'] = array('my_curl', 'my_des', 'my_response', 'my_api');
+$autoload['libraries'] = array('my_curl', 'database', 'my_des', 'my_response', 'my_api', "email");
+
+//web端不自动加载数据库，使用以下语句
+//$autoload['libraries'] = array('my_curl', 'my_des', 'my_response', 'myapi');
 
 /*
 | -------------------------------------------------------------------
@@ -90,7 +92,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 //自动加载辅助函数url、html
-$autoload['helper'] = array('url', 'html', 'cookie');
+$autoload['helper'] = array('url', 'html');
 
 /*
 | -------------------------------------------------------------------
@@ -105,7 +107,7 @@ $autoload['helper'] = array('url', 'html', 'cookie');
 |
 */
 //自动加载自己的配置项
-$autoload['config'] = array('my_config');
+$autoload['config'] = array('./development/my_config', 'email');
 
 /*
 | -------------------------------------------------------------------

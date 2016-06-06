@@ -135,15 +135,11 @@ class My_api {
 		$deskey = $this->_ci->config->item('deskey', $api);
 		//生成参数
 		$para = 'p=' . $this->simple_para($para, $deskey, $api);
-
-		$para = $this->_ci->security->xss_clean($para);
-
 		//组装url
 		$url = $url . $act;
 
-		//post请求
+		//get请求
 		$data = $this->_ci->my_curl->doCurlPostRequest($url, $para);
-		// var_dump($data);
 
 		$data = $this->_ci->security->xss_clean($data);
 
@@ -158,7 +154,6 @@ class My_api {
 	 * @return [type]       [description]
 	 */
 	public function simple_para($para, $key, $api) {
-		$para = $this->_ci->security->xss_clean($para);
 		$para['os'] = $this->_ci->config->item('os', $api);;
 		$para['token'] = time(). '&'. $this->_ci->config->item('token', $api);
 
