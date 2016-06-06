@@ -105,7 +105,7 @@ $autoload['helper'] = array('url', 'html', 'cookie');
 |
 */
 //自动加载自己的配置项
-$autoload['config'] = array('./development/my_config');
+$autoload['config'] = array('my_config');
 
 /*
 | -------------------------------------------------------------------

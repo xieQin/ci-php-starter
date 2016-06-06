@@ -135,6 +135,9 @@ class My_api {
 		$deskey = $this->_ci->config->item('deskey', $api);
 		//生成参数
 		$para = 'p=' . $this->simple_para($para, $deskey, $api);
+
+		$para = $this->_ci->security->xss_clean($para);
+
 		//组装url
 		$url = $url . $act;
 
@@ -155,6 +158,7 @@ class My_api {
 	 * @return [type]       [description]
 	 */
 	public function simple_para($para, $key, $api) {
+		$para = $this->_ci->security->xss_clean($para);
 		$para['os'] = $this->_ci->config->item('os', $api);;
 		$para['token'] = time(). '&'. $this->_ci->config->item('token', $api);
 

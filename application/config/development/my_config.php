@@ -11,10 +11,12 @@ define('MY_DES_KEY', 'abcdefgh');
 /**
  * API配置
  */
-//百倍相关配置
-$config['100bei'] = array(
-  'share_url' => 'http://weixin.100bei.com/weixin12/euroSign.do?', //分享地址
-  'register_url' => 'http://www.baidu.com' //注册地址
+//api相关配置
+$config['demo'] = array(
+  'url' => '', //api地址
+  'deskey' => '' //des加解密key
+  'token' => '' //安全码
+  'os' => 'Web'
 );
 //--------------------以下内容正式发布时不需要配置
 /**
