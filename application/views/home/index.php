@@ -17,7 +17,7 @@
 </head>
 <body data-url="<?=base_url()?>">
 <div class="wrap">
-
+  <p data-action="test">hello, this is ci-demo</p>
 </div>
 <script type="text/javascript" src="<?=base_url('assets/js/jquery-1.11.1.min.js')?>"></script>
 <script type="text/javascript" src="<?=base_url('assets/js/fastclick.js')?>"></script>
