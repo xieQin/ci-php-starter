@@ -154,6 +154,7 @@ class My_api {
 	 * @return [type]       [description]
 	 */
 	public function simple_para($para, $key, $api) {
+		$para = $this->_ci->security->xss_clean($para);
 		$para['os'] = $this->_ci->config->item('os', $api);;
 		$para['token'] = time(). '&'. $this->_ci->config->item('token', $api);
 
